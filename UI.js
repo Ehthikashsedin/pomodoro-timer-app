@@ -3,17 +3,20 @@
 
 class UI {
     constructor() {
-        // Retrieve DOM elements you will be interating with
         this.displayElement = document.getElementById('display');
         this.modeElement = document.getElementById('mode');
+
+        if (!this.displayElement || !this.modeElement) {
+            throw new Error('Required UI elements are missing');
+        }
     }
 
-    updateDisplay(minutes, seconds) {
-        // Format time and update this.displayElement
+    updateDisplay(timeString) {
+        this.displayElement.textContent = timeString;
     }
 
     updateMode(modeName) {
-        // Update the visual indicator of Work vs Break
+        this.modeElement.textContent = modeName;
     }
 }
 
