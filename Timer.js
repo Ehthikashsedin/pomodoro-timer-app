@@ -6,8 +6,8 @@ class Timer {
     constructor(duration = 25 * 60) {
         this.#secondsRemaining = duration;
         this.#initialTime = duration;
-        this.onTick = () => {};
-        this.onComplete = () => {};
+        this.onTick = () => { };
+        this.onComplete = () => { };
     }
 
     start() {
@@ -50,9 +50,8 @@ class Timer {
         const minutes = Math.floor(this.#secondsRemaining / 60);
         const seconds = this.#secondsRemaining % 60;
 
-        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 }
 
 export default Timer;
- 
