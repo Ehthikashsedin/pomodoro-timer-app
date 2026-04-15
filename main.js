@@ -21,7 +21,7 @@ timer.onTick = (timeString) => {
 timer.onComplete = () => {
 
     isWorkMode = !isWorkMode;
-
+    
 
     if (isWorkMode) {
         timer.reset(3); // 25 minutes
