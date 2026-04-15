@@ -1,19 +1,22 @@
-// UI.js
-// Handles all updates to the DOM based on the current state of the application
+
 
 class UI {
     constructor() {
-        // Retrieve DOM elements you will be interating with
         this.displayElement = document.getElementById('display');
         this.modeElement = document.getElementById('mode');
     }
 
-    updateDisplay(minutes, seconds) {
-        // Format time and update this.displayElement
+    updateDisplay(timeString) {
+        this.displayElement.textContent = timeString;
     }
 
-    updateMode(modeName) {
-        // Update the visual indicator of Work vs Break
+    updateMode(modeText) {
+        this.modeElement.textContent = modeText;
+        if (modeText === 'Work Mode') {
+            this.modeElement.style.color = 'red';
+        } else {
+            this.modeElement.style.color = 'green';
+        }
     }
 }
 
